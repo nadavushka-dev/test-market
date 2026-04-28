@@ -1,0 +1,13 @@
+{
+  "name": "leverate",
+  "owner": {
+    "name": "leverate",
+    "email": "team@leverate.com"
+  },
+  "plugins": [
+    {
+      "name": "lev-plugin-market",
+      "source": "./plugins/lev-plugin-market"
+    }
+  ]
+}
