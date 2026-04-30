@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A **Claude Code plugin marketplace** named `leverate` that ships a single plugin (`lev-market`) containing user-level skills. There is no build system, no tests, and no application runtime — the deliverable is a set of static config files and Markdown skills that Claude Code loads.
+A **Claude Code plugin marketplace** named `leverate` that hosts one plugin per squad in the organization. Each plugin contains user-level skills, commands, and agents shared across that squad's developers. Current plugins: `web-squad`, `core-squad`. There is no build system, no tests, and no application runtime — the deliverable is a set of static config files and Markdown skills that Claude Code loads.
 
 ## Layout
 
@@ -33,10 +33,10 @@ Conventions observed in the existing skills:
 
 ## Common tasks
 
-**Add a skill:** create `plugins/lev-market/skills/<name>/SKILL.md`, then bump `version` in `plugins/lev-market/.claude-plugin/plugin.json` so consumers pick up the change.
+**Add a skill:** create `plugins/<squad>/skills/<name>/SKILL.md`, then bump `version` in `plugins/<squad>/.claude-plugin/plugin.json` so consumers pick up the change.
 
 **Rename a skill:** rename the folder, update `name` in the SKILL.md frontmatter, and bump the plugin version.
 
-**Add a new plugin:** create `plugins/<name>/` with `.claude-plugin/plugin.json` and a `skills/` subtree, then add a corresponding entry to `.claude-plugin/marketplace.json`.
+**Add a new plugin (e.g. for a new squad):** create `plugins/<name>/` with `.claude-plugin/plugin.json` and a `skills/` subtree, then add a corresponding entry to `.claude-plugin/marketplace.json`. Plugin names are kebab-case and don't need a `lev-` prefix — the marketplace already namespaces them.
 
 There are no lint, test, or build commands — verification is "the JSON parses and the YAML frontmatter is well-formed."

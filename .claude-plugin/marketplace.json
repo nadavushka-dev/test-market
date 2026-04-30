@@ -6,8 +6,12 @@
   },
   "plugins": [
     {
-      "name": "lev-plugin-market",
-      "source": "./plugins/lev-plugin-market"
+      "name": "web-squad",
+      "source": "./plugins/web-squad"
+    },
+    {
+      "name": "core-squad",
+      "source": "./plugins/core-squad"
     }
   ]
 }
